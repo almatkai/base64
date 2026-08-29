@@ -1,0 +1,78 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "id": "com.tezbar.base64",
+  "name": "base64",
+  "title": "Base64",
+  "description": "Encode and decode Base64 text from Tezbar.",
+  "version": "0.1.0",
+  "author": "almatkai",
+  "contributors": ["DanielSinclair", "stelo", "sammarks", "ridemountainpig", "luisafk"],
+  "icon": "assets/icon.svg",
+  "categories": ["Developer Tools", "Data"],
+  "keywords": ["base64", "encode", "decode", "clipboard"],
+  "license": "MIT",
+  "platforms": ["macOS", "Windows"],
+  "commands": [
+    {
+      "name": "index",
+      "title": "Base64",
+      "description": "Encode or decode Base64 text interactively.",
+      "mode": "view",
+      "platforms": ["macOS", "Windows"]
+    },
+    {
+      "name": "encode",
+      "title": "Base64 Encode Clipboard",
+      "description": "Replace clipboard text with its Base64 representation.",
+      "mode": "no-view",
+      "platforms": ["macOS", "Windows"]
+    },
+    {
+      "name": "decode",
+      "title": "Base64 Decode Clipboard",
+      "description": "Decode Base64 clipboard text and copy the result.",
+      "mode": "no-view",
+      "platforms": ["macOS", "Windows"]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "defaultAction",
+      "description": "Choose the first action shown for a result.",
+      "type": "dropdown",
+      "required": false,
+      "title": "Default Action",
+      "default": "copyToClipboard",
+      "data": [
+        { "value": "copyToClipboard", "title": "Copy to Clipboard" },
+        { "value": "pasteInApp", "title": "Paste in Active App" },
+        { "value": "openInBrowser", "title": "Open URL in Browser" }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "tezbar": {
+    "schemaVersion": 1,
+    "platforms": ["macos", "windows"],
+    "linuxStatus": "coming-soon",
+    "repository": "https://github.com/almatkai/base64",
+    "upstream": {
+      "repository": "https://github.com/raycast/extensions",
+      "path": "extensions/base64",
+      "commit": "6734d85992290066fd31a7f5bee3cca3d3545a1a"
+    }
+  }
+}
