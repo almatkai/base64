@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "id": "com.tezbar.native.base64",
+  "slug": "base64",
+  "name": "Base64",
+  "version": "0.1.0",
+  "description": "Rust port of the MIT Base64 extension by DanielSinclair, stelo, sammarks, ridemountainpig and luisafk; Tezbar adaptation by almatkai. Compiled-in host registration required.",
+  "icon": "/extensions/icons/base64.png",
+  "runtime": "rust",
+  "replaces": [
+    "raycast.base64"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "preferences": [
+    {
+      "name": "defaultAction",
+      "description": "Choose the first action shown for a result.",
+      "type": "dropdown",
+      "required": false,
+      "title": "Default Action",
+      "default": "copyToClipboard",
+      "data": [
+        {
+          "value": "copyToClipboard",
+          "title": "Copy to Clipboard"
+        },
+        {
+          "value": "pasteInApp",
+          "title": "Paste in Active App"
+        },
+        {
+          "value": "openInBrowser",
+          "title": "Open URL in Browser"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "index",
+      "title": "Base64",
+      "description": "Encode or decode Base64 text interactively.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust"
+    },
+    {
+      "name": "encode",
+      "title": "Base64 Encode Clipboard",
+      "description": "Replace clipboard text with its Base64 representation.",
+      "mode": "no-view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust"
+    },
+    {
+      "name": "decode",
+      "title": "Base64 Decode Clipboard",
+      "description": "Decode Base64 clipboard text and copy the result.",
+      "mode": "no-view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust"
+    }
+  ],
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Library and fake-host tests only; actual Tezbar OS UI has not been tested."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Library and fake-host tests only; actual Tezbar OS UI has not been tested."
+    }
+  ]
+}
