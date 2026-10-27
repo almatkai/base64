@@ -10,6 +10,11 @@ Encode and decode Base64 text interactively or directly from the clipboard.
 
 ## Compatibility
 
+The [Native V2 Rust port](v2/README.md) implements all three commands using
+Tezbar beta's compiled-in adapter API and the original Raycast PNG. It includes
+Rust 1.85 tests and integration instructions; using it in Tezbar requires host
+registration and a rebuild. The JavaScript version below remains available.
+
 - Windows: built and exercised in Tezbar on Windows 11, including clipboard round trips.
 - macOS: uses only cross-platform Node.js and Raycast APIs and retains the upstream macOS-compatible design.
 - Linux: not currently declared.
