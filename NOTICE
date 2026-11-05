@@ -9,3 +9,6 @@ almatkai. See LICENSE and licenses/raycast-extensions-MIT.txt.
 resources/assets/command-icon.png is the unchanged original Raycast PNG
 (80527 bytes, SHA-256 91b4ccba2a5abfaf8eb4541073a5bc10e06b8349a94b0c33538ebf8f0a2eca8c).
 No trademark rights are claimed.
+The executable also links the Tezbar Rust extension SDK (Apache-2.0).
+Its original LICENSE and NOTICE, and the resolved dependency notices for both
+published targets, are preserved under licenses/crates/; see licenses/THIRD_PARTY.md.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build the root-layout target ZIP, exact SHA-256 inventory and sidecars. No uploads."""
-import argparse, hashlib, json, re, shutil, stat, subprocess, tempfile, zipfile
+import argparse, hashlib, json, os, re, shutil, stat, subprocess, sys, tempfile, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +26,7 @@ def check_sdk():
 
 def build(target, binary, output):
     check_sdk()
+    subprocess.check_call([sys.executable, str(ROOT / 'scripts/vendor-licenses.py'), '--check'])
     manifest = json.loads((ROOT / 'extension.json').read_text())
     slug = manifest['slug']
     windows = TARGETS[target]
