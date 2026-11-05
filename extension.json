@@ -87,7 +87,7 @@
     {
       "platform": "Windows",
       "state": "not-run",
-      "note": "Not built or executed on Windows by this task."
+      "note": "Real desktop UI, clipboard and focus behavior not verified."
     }
   ],
   "execution": "process",

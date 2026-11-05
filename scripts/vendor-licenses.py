@@ -71,7 +71,7 @@ def main():
              "Package-owned and original Raycast notices remain in LICENSE, NOTICE and licenses/.", "",
              "| Crate | Version | Declared licenses | Bundled documents |", "|---|---|---|---|"]
     for entry in entries:
-        documents = ", ".join("[" + Path(name).name + "](" + str(Path(name).relative_to("licenses")) + ")"
+        documents = ", ".join("[" + Path(name).name + "](" + Path(name).relative_to("licenses").as_posix() + ")"
                               for name in entry["documents"])
         lines.append("| " + entry["name"] + " | " + entry["version"] + " | " +
                      str(entry["declaredLicenses"]) + " | " + documents + " |")
