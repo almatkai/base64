@@ -10,6 +10,21 @@ Encode and decode Base64 text interactively or directly from the clipboard.
 
 ## Native Rust installable extension (schema 3, process)
 
+### Published Rust package
+
+[Release v0.1.0](https://github.com/almatkai/base64/releases/tag/v0.1.0) provides [macOS Apple Silicon](https://github.com/almatkai/base64/releases/download/v0.1.0/base64-aarch64-apple-darwin.zip) and [Windows x64](https://github.com/almatkai/base64/releases/download/v0.1.0/base64-x86_64-pc-windows-msvc.zip) ZIPs, plus the [trusted release manifest](https://github.com/almatkai/base64/releases/download/v0.1.0/extension-release.json) and SHA256SUMS. No Bun or user-side Cargo build is required.
+
+Download `extension-release.json` and your platform ZIP, then run your installed Tezbar executable:
+
+```sh
+tezbar --extensions-v3-import extension-release.json base64-aarch64-apple-darwin.zip
+```
+
+On Windows, select the ZIP ending in `x86_64-pc-windows-msvc.zip`. Replace `tezbar` with the full path to the installed application executable if it is not on PATH. Restart Tezbar after import. Store discovery requires a Tezbar app update containing this package's trusted catalog pin.
+
+Both target packages passed native builds, extracted-package protocol smoke tests, and actual Tezbar CLI imports in isolated profiles. Real desktop clipboard, paste, focus and browser interaction have not been verified.
+
+
 This repository also builds a standalone, installable Tezbar extension:
 `com.tezbar.native.base64` (`extension.json`, schema 3, `execution: process`,
 protocol 1), replacing `raycast.base64`. It is a separate executable
@@ -46,7 +61,7 @@ inventories every member except the manifest. `dist/` also gets the archive
 `artifacts` stays empty in source; release URLs/digests are pinned by the trusted
 host catalog. Tests use a recording fake host and never touch the real clipboard,
 browser or window. Real Tezbar desktop QA has not been done on either platform,
-and the Windows target has not been built here.
+and real Windows desktop acceptance remains unverified. Native Windows build, package smoke and isolated CLI import evidence is included in the published release.
 
 ## Compatibility
 
