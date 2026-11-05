@@ -1,0 +1,23 @@
+[package]
+name = "tezbar-base64"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+description = "Standalone Rust Base64 process extension for Tezbar"
+repository = "https://github.com/almatkai/base64"
+publish = false
+
+[[bin]]
+name = "tezbar-base64"
+path = "src-rust/main.rs"
+
+[dependencies]
+serde_json = "=1.0.145"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-util", "io-std", "sync", "time"] }
+tezbar-extension-sdk = { git = "https://github.com/almatkai/tezbar-extension-sdk-rust.git", rev = "aaec571673ab64a85a136cf6bd054ef660c4d93c" }
+tezbar-base64-v2 = { path = "v2" }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-util", "process", "time"] }
+tempfile = "3"

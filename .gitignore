@@ -7,3 +7,7 @@ Thumbs.db
 
 .tezbar*
 
+
+/target/
+/dist/
+__pycache__/

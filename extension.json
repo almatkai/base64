@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 3,
+  "id": "com.tezbar.native.base64",
+  "slug": "base64",
+  "name": "Base64",
+  "version": "0.1.0",
+  "description": "Encode and decode Base64 text from Tezbar.",
+  "author": "almatkai",
+  "icon": "resources/assets/command-icon.png",
+  "runtime": "rust",
+  "replaces": [
+    "raycast.base64"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "preferences": [
+    {
+      "name": "defaultAction",
+      "description": "Choose the first action shown for a result.",
+      "type": "dropdown",
+      "required": false,
+      "title": "Default Action",
+      "default": "copyToClipboard",
+      "data": [
+        {
+          "value": "copyToClipboard",
+          "title": "Copy to Clipboard"
+        },
+        {
+          "value": "pasteInApp",
+          "title": "Paste in Active App"
+        },
+        {
+          "value": "openInBrowser",
+          "title": "Open URL in Browser"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "index",
+      "title": "Base64",
+      "description": "Encode or decode Base64 text interactively.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "concurrency": "serialize",
+      "refreshMs": null
+    },
+    {
+      "name": "encode",
+      "title": "Base64 Encode Clipboard",
+      "description": "Replace clipboard text with its Base64 representation.",
+      "mode": "no-view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "concurrency": "serialize"
+    },
+    {
+      "name": "decode",
+      "title": "Base64 Decode Clipboard",
+      "description": "Decode Base64 clipboard text and copy the result.",
+      "mode": "no-view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "concurrency": "serialize"
+    }
+  ],
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Process protocol and fake-host tests only; real Tezbar UI not exercised."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Not built or executed on Windows by this task."
+    }
+  ],
+  "execution": "process",
+  "protocolVersion": 1,
+  "repository": "https://github.com/almatkai/base64",
+  "artifacts": {},
+  "capabilities": [
+    "clipboard.read",
+    "clipboard.write",
+    "clipboard.pasteText",
+    "shell.open",
+    "window.visibility"
+  ],
+  "files": {}
+}

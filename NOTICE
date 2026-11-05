@@ -1,0 +1,11 @@
+Base64 — standalone Rust Tezbar extension
+
+Rust port of the MIT-licensed Raycast `base64` extension
+(https://github.com/raycast/extensions, path extensions/base64, upstream commit
+6734d85992290066fd31a7f5bee3cca3d3545a1a). Original author DanielSinclair;
+contributors stelo, sammarks, ridemountainpig, luisafk. Tezbar adaptation by
+almatkai. See LICENSE and licenses/raycast-extensions-MIT.txt.
+
+resources/assets/command-icon.png is the unchanged original Raycast PNG
+(80527 bytes, SHA-256 91b4ccba2a5abfaf8eb4541073a5bc10e06b8349a94b0c33538ebf8f0a2eca8c).
+No trademark rights are claimed.
